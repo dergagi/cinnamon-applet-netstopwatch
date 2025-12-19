@@ -1,28 +1,43 @@
-# Net Traffic Stopwatch (netstopwatch@store2)
+# Net Traffic Stopwatch Applet
 
-Session-Traffic (resetbar) + Interface-Auswahl via /sys rx_bytes/tx_bytes
+Net Traffic Stopwatch ist ein Cinnamon‑Applet, das zeigt, wie viel Netzwerkverkehr (empfangen/gesendet) du seit deiner Anmeldung verbraucht hast. Es verhält sich wie eine Stoppuhr für deinen Datenverkehr und lässt sich per Menü zurücksetzen.
 
-## What it does
+## Why it’s different
 
-- Shows session network traffic (RX/TX) as a “stopwatch”
-- Reset session counters from the applet menu
-- Select network interface (based on /sys/class/net/* statistics)
+Im Gegensatz zu vielen Bandbreiten‑Monitoren misst dieses Applet session‑basiert: Die Zähler starten bei jedem Login neu und können jederzeit per Klick zurückgesetzt werden. Zudem kannst du die zu überwachende Netzwerkschnittstelle auswählen und bei Bedarf Docker/veth‑Interfaces ausblenden.
 
-## Install (local)
+## Install
 
-1. Copy the applet directory into your Cinnamon applets folder:
+1. Repository klonen oder herunterladen.
+2. Den Applet‑Ordner in dein Cinnamon‑Applet‑Verzeichnis kopieren:
 
-    mkdir -p ~/.local/share/cinnamon/applets
-    cp -a netstopwatch@store2 ~/.local/share/cinnamon/applets/
+        mkdir -p ~/.local/share/cinnamon/applets
+        cp -a netstopwatch@store2 ~/.local/share/cinnamon/applets/
 
-2. Restart Cinnamon (or log out/in):
+3. Cinnamon neu starten (Alt + F2, dann r) oder ab-/anmelden.
+4. Über „Add applets to panel“ das Applet in ein Panel einfügen.
 
-    cinnamon --replace
+Eine Einreichung bei Cinnamon Spices ist geplant.
 
-3. Add the applet to a panel via Cinnamon settings.
+## Compatibility
 
-## Notes
+Getestet mit Cinnamon 5.x/6.x auf Linux Mint 21 und Debian 12/13. Läuft überall, wo Cinnamon und `/sys/class/net/*/statistics/` verfügbar sind.
 
-- Reads RX/TX bytes via:
-  /sys/class/net/<iface>/statistics/rx_bytes
-  /sys/class/net/<iface>/statistics/tx_bytes
+## Privacy & Security
+
+Das Applet schnüffelt nicht im Netzwerkverkehr und öffnet keine Sockets. Es liest ausschließlich die RX/TX‑Bytezähler aus `/sys/class/net/<iface>/statistics/{rx,tx}_bytes` und berechnet daraus die Anzeige.
+
+## Screenshots
+
+Speichere deine Screenshots unter `assets/screenshots/` und verweise sie hier, z. B.:
+
+![Applet-Menü](assets/screenshots/menu.png)
+![Interface‑Selector](assets/screenshots/interface_selector.png)
+
+## Issues & contributions
+
+Fehler oder Feature‑Vorschläge bitte über GitHub Issues melden. Pull Requests sind willkommen.
+
+## License
+
+Lizenz: MIT – siehe [LICENSE](LICENSE) für Details.
