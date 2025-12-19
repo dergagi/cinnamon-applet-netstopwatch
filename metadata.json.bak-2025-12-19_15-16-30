@@ -1,0 +1,6 @@
+{
+  "uuid": "netstopwatch@store2",
+  "name": "Net Traffic Stopwatch",
+  "description": "DU-Meter-like Session-Traffic (resetbar) via /sys rx_bytes/tx_bytes",
+  "max-instances": 10
+}
