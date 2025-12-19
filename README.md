@@ -31,8 +31,8 @@ Das Applet schnüffelt nicht im Netzwerkverkehr und öffnet keine Sockets. Es li
 
 Speichere deine Screenshots unter `assets/screenshots/` und verweise sie hier, z. B.:
 
-![Applet-Menü](assets/screenshots/menu.png)
-![Interface‑Selector](assets/screenshots/interface_selector.png)
+![Applet-Menü](assets/screenshots/menu.jpg)
+![Interface‑Selector](assets/screenshots/interface_selector.jpg)
 
 ## Issues & contributions
 
