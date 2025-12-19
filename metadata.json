@@ -2,5 +2,6 @@
   "uuid": "netstopwatch@store2",
   "name": "Net Traffic Stopwatch",
   "description": "Session-Traffic (resetbar) + Interface-Auswahl via /sys rx_bytes/tx_bytes",
+  "version": "0.1.0",
   "max-instances": 10
 }
